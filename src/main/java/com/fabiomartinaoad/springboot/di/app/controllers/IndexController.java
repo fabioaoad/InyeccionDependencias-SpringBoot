@@ -1,6 +1,6 @@
 package com.fabiomartinaoad.springboot.di.app.controllers;
 
-import com.fabiomartinaoad.springboot.di.app.models.service.MiServicio;
+import com.fabiomartinaoad.springboot.di.app.models.service.IServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +13,7 @@ public class IndexController {
 
     //Con inyección de dependencia. Se añade anotacion @Autowired
     @Autowired
-    private MiServicio servicio;
+    private IServicio servicio;
 
     @GetMapping({"/", "","/index"})
     public String index(Model model){
