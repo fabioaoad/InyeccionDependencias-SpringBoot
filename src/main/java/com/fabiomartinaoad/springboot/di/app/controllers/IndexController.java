@@ -12,12 +12,23 @@ public class IndexController {
     //private MiServicio servicio = new MiServicio();
 
     //Con inyección de dependencia. Se añade anotacion @Autowired
+
     @Autowired
     private IServicio servicio;
+
+//    @Autowired
+//    public IndexController(IServicio servicio) {
+//        this.servicio = servicio;
+//    }
 
     @GetMapping({"/", "","/index"})
     public String index(Model model){
         model.addAttribute("objeto", servicio.operacion());
         return "index";
     }
+
+//    @Autowired
+//    public void setServicio(IServicio servicio) {
+//        this.servicio = servicio;
+//    }
 }
