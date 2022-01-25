@@ -3,13 +3,17 @@ package com.fabiomartinaoad.springboot.di.app.models.domain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
+
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.io.Serializable;
 import java.util.List;
 
 @Component
-public class Factura {
+@RequestScope
+public class Factura implements Serializable {
 
     @Value("${factura.descripcion}")
     private String descripcion;
