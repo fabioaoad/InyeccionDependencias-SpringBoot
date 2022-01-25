@@ -9,12 +9,13 @@ import java.util.List;
 @Component
 public class Factura {
 
-    @Value("${descripcion.factura}")
+    @Value("${factura.descripcion}")
     private String descripcion;
 
     @Autowired
     private Cliente cliente;
 
+    @Autowired
     private List<ItemFactura> items;
 
     public String getDescripcion() {
@@ -33,11 +34,11 @@ public class Factura {
         this.cliente = cliente;
     }
 
-    public Listt<ItemFactura> getItems() {
+    public List<ItemFactura> getItems() {
         return items;
     }
 
-    public void setItems(Listt<ItemFactura> items) {
+    public void setItems(List<ItemFactura> items) {
         this.items = items;
     }
 }
